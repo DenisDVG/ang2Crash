@@ -24,4 +24,4 @@
 <input #email (keyup.enter)="onKeyUpBindInputVal(email.value)" />
 <input [value]="emailTwo" (keyup.enter)="emailTwo = $event.target.value; onKeyUpTwoWayBindInputVal()" />
 <input [(ngModel)]="emailThree" (keyup.enter)="onKeyUpTwoWayBindNGModelInputVal()" />
-<h3>{{textPipe | summary}}</h3>
+<h3>{{textPipe | summary:10}}</h3>
