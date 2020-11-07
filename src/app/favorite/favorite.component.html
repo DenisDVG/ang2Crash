@@ -1,1 +1,7 @@
-<p>Star icon: <span class="glyphicon glyphicon-star"></span></p>
+<span
+  class="glyphicon glyphicon-star"
+  [class.glyphicon-star]="isFavorite"
+  [class.glyphicon-star-empty]="!isFavorite"
+  (click)="onClick()"
+>
+</span>

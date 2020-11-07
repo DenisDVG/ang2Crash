@@ -16,6 +16,10 @@ export class CoursesComponent implements OnInit {
   emailThree = 'email3@way.com';
   textPipe = `start wwwwwww wwwwwwwwwwwww wwwww
   wwwwee 132132 eresrergdfdf dfgd sdsdsd  sdsdfsfeeeeee and`;
+  post = {
+    title: 'Title',
+    isFavorite: true
+  };
   constructor(private coursesService: CoursesService) {
     this.courses = coursesService.getCourses();
   }
@@ -37,6 +41,9 @@ export class CoursesComponent implements OnInit {
   }
   onKeyUpTwoWayBindNGModelInputVal(): void{
     console.log(this.emailThree);
+  }
+  onFavChange(): void {
+
   }
   ngOnInit(): void {}
 }

@@ -1,8 +1,8 @@
 <p>courses works!</p>
-<h2>{{title}}</h2>
+<h2>{{ title }}</h2>
 <h2 [textContent]="title"></h2>
-<img src="{{imageUrl}}"/>
-<img [src]="imageUrl"/>
+<img src="{{ imageUrl }}" />
+<img [src]="imageUrl" />
 <ul>
   <li *ngFor="let course of courses">
     {{ course }}
@@ -14,7 +14,9 @@
   </tr>
 </table>
 <button class="btn btn-primary" [class.active]="isActive">btn-primary</button>
-<button [style.backgroundColor]="isActive ? 'blue' : 'white'">btn-primary</button>
+<button [style.backgroundColor]="isActive ? 'blue' : 'white'">
+  btn-primary
+</button>
 
 <div (click)="onDivAfterSave()">
   <button (click)="onSave($event)">onSave</button>
@@ -22,6 +24,17 @@
 
 <input (keyup.enter)="onKeyUpFilterEnter($event)" />
 <input #email (keyup.enter)="onKeyUpBindInputVal(email.value)" />
-<input [value]="emailTwo" (keyup.enter)="emailTwo = $event.target.value; onKeyUpTwoWayBindInputVal()" />
-<input [(ngModel)]="emailThree" (keyup.enter)="onKeyUpTwoWayBindNGModelInputVal()" />
-<h3>{{textPipe | summary:10}}</h3>
+<input
+  [value]="emailTwo"
+  (keyup.enter)="emailTwo = $event.target.value; onKeyUpTwoWayBindInputVal()"
+/>
+<input
+  [(ngModel)]="emailThree"
+  (keyup.enter)="onKeyUpTwoWayBindNGModelInputVal()"
+/>
+<h3>{{ textPipe | summary: 10 }}</h3>
+
+<app-favorite
+  [isFavorite]="post.isFavorite"
+  (change)="onFavChange()"
+></app-favorite>
