@@ -36,5 +36,6 @@
 
 <app-favorite
   [isFavorite]="post.isFavorite"
-  (change)="onFavChange()"
+  [is-favorite-alias]="post.isFavorite"
+  (changeMy)="onFavChange($event)"
 ></app-favorite>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CoursesService } from '../courses.service';
+import { FavAnotetion } from '../favorite/favorite.component';
 
 @Component({
   selector: 'app-courses',
@@ -42,8 +43,8 @@ export class CoursesComponent implements OnInit {
   onKeyUpTwoWayBindNGModelInputVal(): void{
     console.log(this.emailThree);
   }
-  onFavChange(): void {
-
+  onFavChange(eventArg: FavAnotetion): void {
+    console.log('onFavChange', eventArg);
   }
   ngOnInit(): void {}
 }
