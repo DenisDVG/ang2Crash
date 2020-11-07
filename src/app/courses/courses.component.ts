@@ -12,6 +12,10 @@ export class CoursesComponent implements OnInit {
   imageUrl = 'http://lorempixel.com/400/200';
   colSpan = 2;
   isActive = true;
+  emailTwo = 'email2@way.com';
+  emailThree = 'email3@way.com';
+  textPipe = `start wwwwwww wwwwwwwwwwwww wwwww
+  wwwwee 132132 eresrergdfdf dfgd sdsdsd  sdsdfsfeeeeee and`;
   constructor(private coursesService: CoursesService) {
     this.courses = coursesService.getCourses();
   }
@@ -22,8 +26,17 @@ export class CoursesComponent implements OnInit {
   onDivAfterSave(): void {
     console.log('onDivAfterSave');
   }
-  onKeyUpFilterEnter(): void {
-      console.log('Enter was pressed');
+  onKeyUpFilterEnter($event): void {
+      console.log($event.target.value);
+  }
+  onKeyUpBindInputVal(email: string): void{
+    console.log(email);
+  }
+  onKeyUpTwoWayBindInputVal(): void{
+    console.log(this.emailTwo);
+  }
+  onKeyUpTwoWayBindNGModelInputVal(): void{
+    console.log(this.emailThree);
   }
   ngOnInit(): void {}
 }
