@@ -3,11 +3,17 @@
 <h2 [textContent]="title"></h2>
 <img src="{{ imageUrl }}" />
 <img [src]="imageUrl" />
-<ul>
-  <li *ngFor="let course of courses">
-    {{ course }}
-  </li>
-</ul>
+<div *ngIf="courses.length; then isCourses else noCourses"></div>
+<ng-template #isCourses>
+  <ul>
+    <li *ngFor="let course of courses; index as i; trackBy: trackCourse">
+      {{i}}{{ course.name }}
+    </li>
+  </ul>
+</ng-template>
+<ng-template #noCourses>
+  No courses yet
+</ng-template>
 <table>
   <tr>
     <td [attr.colspan]="colSpan">colSpan</td>

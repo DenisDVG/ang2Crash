@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CoursesService } from '../courses.service';
+import { Course, CoursesService } from '../courses.service';
 import { FavAnotetion } from '../favorite/favorite.component';
 
 @Component({
@@ -8,7 +8,7 @@ import { FavAnotetion } from '../favorite/favorite.component';
   styleUrls: ['./courses.component.less'],
 })
 export class CoursesComponent implements OnInit {
-  courses: string[];
+  courses: Course[];
   title = 'List of courses';
   imageUrl = 'http://lorempixel.com/400/200';
   colSpan = 2;
@@ -23,6 +23,9 @@ export class CoursesComponent implements OnInit {
   };
   constructor(private coursesService: CoursesService) {
     this.courses = coursesService.getCourses();
+  }
+  trackCourse(index: number, course: Course): number|undefined{
+   return course ? course.id : undefined;
   }
   onSave($event): void {
     $event.stopPropagation();
