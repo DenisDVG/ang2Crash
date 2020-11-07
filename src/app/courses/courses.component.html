@@ -28,7 +28,7 @@
   <button (click)="onSave($event)">onSave</button>
 </div>
 
-<input (keyup.enter)="onKeyUpFilterEnter($event)" />
+<input [appInputFormat]="'uppercase'" (keyup.enter)="onKeyUpFilterEnter($event)" />
 <input #email (keyup.enter)="onKeyUpBindInputVal(email.value)" />
 <input
   [value]="emailTwo"
